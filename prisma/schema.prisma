@@ -1,0 +1,89 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+enum UserRole {
+  ADMIN
+  CUSTOMER
+}
+
+enum InvoiceStatus {
+  PENDING
+  PAID
+  OVERDUE
+}
+
+model User {
+  id        String    @id @default(uuid())
+  email     String    @unique
+  password  String
+  role      UserRole
+  createdAt DateTime  @default(now())
+
+  customer  Customer?
+}
+
+model Customer {
+  id        String    @id @default(uuid())
+  userId    String    @unique
+  name      String
+  phone     String?
+  address   String?
+  createdAt DateTime  @default(now())
+
+  user      User      @relation(fields: [userId], references: [id])
+  invoices  Invoice[]
+}
+
+model Invoice {
+  id           String        @id @default(uuid())
+  invoiceNo    String        @unique
+  customerId   String
+  periodMonth  Int
+  periodYear   Int
+  amount       Decimal
+  dueDate      DateTime
+  status       InvoiceStatus @default(PENDING)
+  createdAt    DateTime      @default(now())
+
+  customer     Customer      @relation(fields: [customerId], references: [id])
+  items        InvoiceItem[]
+  payments     Payment[]
+  penalty      Penalty?
+}
+
+model InvoiceItem {
+  id        String   @id @default(uuid())
+  invoiceId String
+  name      String
+  quantity  Int
+  price     Decimal
+
+  invoice   Invoice  @relation(fields: [invoiceId], references: [id])
+}
+
+model Payment {
+  id        String   @id @default(uuid())
+  invoiceId String   @unique   // 🔒 1 invoice = 1 payment
+  invoice   Invoice  @relation(fields: [invoiceId], references: [id])
+
+  amount    Int
+  method    String
+  status    String
+  createdAt DateTime @default(now())
+}
+
+model Penalty {
+  id         String   @id @default(uuid())
+  invoiceId  String   @unique
+  percentage Decimal  @default(5.0)
+  amount     Decimal
+  createdAt  DateTime @default(now())
+
+  invoice    Invoice  @relation(fields: [invoiceId], references: [id])
+}
