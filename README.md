@@ -1,7 +1,6 @@
 # Smart-Bil — Smart Billing & Payment Collection System
 
-Smart-Bil adalah aplikasi **web-based billing & payment collection system** yang dibangun menggunakan **Next.js (App Router)**, **Prisma**, dan **SQLite**.  
-Aplikasi ini berfokus pada pengelolaan tagihan pelanggan dan pembayaran dengan pemisahan peran **Admin** dan **Customer**.
+Smart-Bil adalah aplikasi **web-based billing & payment collection system** yang dibangun menggunakan **Next.js (App Router)**, **Prisma**, dan **SQLite**. Aplikasi ini berfokus pada pengelolaan tagihan pelanggan dan pembayaran dengan pemisahan peran **Admin** dan **Customer**.
 
 Project ini cocok untuk:
 - Tugas kuliah
@@ -100,7 +99,7 @@ Project ini cocok untuk:
 - cd smart-bil
 
 ### 2. Install Dependencies
-npm install
+- npm install
 
 ### 3. Setup Environment
 - Buat file .env di root project:
@@ -111,10 +110,10 @@ npm install
 - npx prisma db seed
 
 ### 5. Run Development Server
-npm run dev
+- npm run dev
 
 ### 6. Akses Aplikasi
-http://localhost:3000
+- http://localhost:3000
 
 ---
 
