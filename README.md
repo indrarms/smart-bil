@@ -42,34 +42,35 @@ Project ini cocok untuk:
 ---
 
 ## 📁 Project Structure
-app/
-├─ (admin)/ # Admin pages
-│ ├─ dashboard
-│ ├─ customers
-│ ├─ invoices
-│ ├─ payments
-│ ├─ reports
-│ └─ settings
-│
-├─ (customer)/ # Customer pages
-│ ├─ my-invoices
-│ └─ my-payments
-│
-├─ api/ # Backend APIs
-│ ├─ auth
-│ ├─ payments
-│ ├─ customer
-│ └─ admin
-│
-├─ middleware.ts # Route protection
-└─ layout.tsx
 
-prisma/
-├─ schema.prisma
-└─ seed.ts
-
-lib/
-└─ prisma.ts
+- app/
+- ├─ (admin)/ # Admin pages
+- │ ├─ dashboard
+- │ ├─ customers
+- │ ├─ invoices
+- │ ├─ payments
+- │ ├─ reports
+- │ └─ settings
+- │
+- ├─ (customer)/ # Customer pages
+- │ ├─ my-invoices
+- │ └─ my-payments
+- │
+- ├─ api/ # Backend APIs
+- │ ├─ auth
+- │ ├─ payments
+- │ ├─ customer
+- │ └─ admin
+- │
+- ├─ middleware.ts # Route protection
+- └─ layout.tsx
+- 
+- prisma/
+- ├─ schema.prisma
+- └─ seed.ts
+- 
+- lib/
+- └─ prisma.ts
 
 ---
 
@@ -83,33 +84,31 @@ lib/
 ## 🧪 Dummy Accounts
 
 ### Admin
-Email : admin@smartbil.com
-
-Password : admin123
+- Email : admin@smartbil.com
+- Password : admin123
 
 ### Customer
-Email : admin@smartbil.com
-
-Password : admin123
+- Email : admin@smartbil.com
+- Password : admin123
 
 ---
 
 ## Installation Setup
 
 ### 1. Clone Respository
-git clone https://github.com/indrarms/smart-bil.git
-cd smart-bil
+- git clone https://github.com/indrarms/smart-bil.git
+- cd smart-bil
 
 ### 2. Install Dependencies
 npm install
 
 ### 3. Setup Environment
-Buat file .env di root project:
-DATABASE_URL="file:./dev.db"
+- Buat file .env di root project:
+- DATABASE_URL="file:./dev.db"
 
 ### 4. Setup Database
-npx prisma migrate dev
-npx prisma db seed
+- npx prisma migrate dev
+- npx prisma db seed
 
 ### 5. Run Development Server
 npm run dev
