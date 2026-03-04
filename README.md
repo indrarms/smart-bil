@@ -1,127 +1,165 @@
 # Smart-Bil — Smart Billing & Payment Collection System
 
-Smart-Bil adalah aplikasi **web-based billing & payment collection system** yang dibangun menggunakan **Next.js (App Router)**, **Prisma**, dan **SQLite**. Aplikasi ini berfokus pada pengelolaan tagihan pelanggan dan pembayaran dengan pemisahan peran **Admin** dan **Customer**.
+**Smart-Bil** is a **web-based billing and payment collection system** built using **Next.js (App Router)**, **Prisma**, and **SQLite**.
+The application focuses on managing customer invoices and payments with role-based access for **Admin** and **Customer**.
 
-Project ini cocok untuk:
-- Tugas kuliah
-- Demo sistem billing
-- Portofolio fullstack web
+This project is suitable for:
 
----
-
-## Features
-
-### Customer
-- Login sebagai customer
-- Melihat daftar invoice
-- Melihat status invoice (UNPAID / PAID / OVERDUE)
-- Melakukan pembayaran (manual)
-- Melihat riwayat pembayaran
-
-### Admin
-- Login sebagai admin
-- Dashboard ringkasan invoice & revenue
-- Manajemen customer
-- Manajemen invoice
-- Monitoring pembayaran
-- Halaman laporan (analytics)
+* University assignments
+* Billing system demonstrations
+* Fullstack web development portfolio
 
 ---
 
-## Tech Stack
+# Features
 
-- **Framework**: Next.js 16 (App Router)
-- **Frontend**: React, Tailwind CSS
-- **Backend**: Next.js Route Handlers
-- **Database**: SQLite
-- **ORM**: Prisma
-- **Authentication**: Custom cookie-based auth
-- **Password Hashing**: bcrypt
+## Customer
 
----
+* Login as a customer
+* View invoice list
+* Check invoice status (UNPAID / PAID / OVERDUE)
+* Make manual payments
+* View payment history
 
-## Project Structure
+## Admin
 
-- app/
-- ├─ (admin)/ # Admin pages
-- │ ├─ dashboard
-- │ ├─ customers
-- │ ├─ invoices
-- │ ├─ payments
-- │ ├─ reports
-- │ └─ settings
-- │
-- ├─ (customer)/ # Customer pages
-- │ ├─ my-invoices
-- │ └─ my-payments
-- │
-- ├─ api/ # Backend APIs
-- │ ├─ auth
-- │ ├─ payments
-- │ ├─ customer
-- │ └─ admin
-- │
-- ├─ middleware.ts # Route protection
-- └─ layout.tsx
-- 
-- prisma/
-- ├─ schema.prisma
-- └─ seed.ts
-- 
-- lib/
-- └─ prisma.ts
+* Login as an admin
+* Dashboard with invoice & revenue summary
+* Customer management
+* Invoice management
+* Payment monitoring
+* Reports & analytics page
 
 ---
 
-## Roles & Access
+# Tech Stack
 
-| Role      | Access                                            |
-|-----------|---------------------------------------------------|
-| ADMIN     | Dashboard, Customers, Invoices, Payments, Reports |
-| CUSTOMER  | My Invoices, Payment History                      |
-
-## Dummy Accounts
-
-### Admin
-- Email : admin@smartbil.com
-- Password : admin123
-
-### Customer
-- Email : admin@smartbil.com
-- Password : admin123
+* **Framework**: Next.js 16 (App Router)
+* **Frontend**: React, Tailwind CSS
+* **Backend**: Next.js Route Handlers
+* **Database**: SQLite
+* **ORM**: Prisma
+* **Authentication**: Custom cookie-based authentication
+* **Password Hashing**: bcrypt
 
 ---
 
-## Installation Setup
+# Project Structure
 
-### 1. Clone Respository
-- git clone https://github.com/indrarms/smart-bil.git
-- cd smart-bil
+```
+app/
+├─ (admin)/              # Admin pages
+│  ├─ dashboard
+│  ├─ customers
+│  ├─ invoices
+│  ├─ payments
+│  ├─ reports
+│  └─ settings
+│
+├─ (customer)/           # Customer pages
+│  ├─ my-invoices
+│  └─ my-payments
+│
+├─ api/                  # Backend APIs
+│  ├─ auth
+│  ├─ payments
+│  ├─ customer
+│  └─ admin
+│
+├─ middleware.ts         # Route protection
+└─ layout.tsx
 
-### 2. Install Dependencies
-- npm install
+prisma/
+├─ schema.prisma
+└─ seed.ts
 
-### 3. Setup Environment
-- Buat file .env di root project:
-- DATABASE_URL="file:./dev.db"
-
-### 4. Setup Database
-- npx prisma migrate dev
-- npx prisma db seed
-
-### 5. Run Development Server
-- npm run dev
-
-### 6. Akses Aplikasi
-- http://localhost:3000
+lib/
+└─ prisma.ts
+```
 
 ---
 
-### Notes
-- Menggunakan SQLite (development & demo friendly)
-- Tidak terhubung ke payment gateway eksternal
-- Fokus pada alur bisnis billing & payment
-- Invoice items belum diaktifkan (scope MVP)
+# Roles & Access
+
+| Role     | Access                                            |
+| -------- | ------------------------------------------------- |
+| ADMIN    | Dashboard, Customers, Invoices, Payments, Reports |
+| CUSTOMER | My Invoices, Payment History                      |
+
+---
+
+# Dummy Accounts
+
+## Admin
+
+Email: `admin@smartbil.com`
+Password: `admin123`
+
+## Customer
+
+Email: `admin@smartbil.com`
+Password: `admin123`
+
+---
+
+# Installation Setup
+
+## 1. Clone Repository
+
+```bash
+git clone https://github.com/indrarms/smart-bil.git
+cd smart-bil
+```
+
+## 2. Install Dependencies
+
+```bash
+npm install
+```
+
+## 3. Setup Environment
+
+Create a `.env` file in the project root:
+
+```env
+DATABASE_URL="file:./dev.db"
+```
+
+---
+
+## 4. Setup Database
+
+```bash
+npx prisma migrate dev
+npx prisma db seed
+```
+
+---
+
+## 5. Run Development Server
+
+```bash
+npm run dev
+```
+
+---
+
+## 6. Access the Application
+
+```
+http://localhost:3000
+```
+
+---
+
+# Notes
+
+* Uses **SQLite** (development & demo friendly)
+* Not connected to any external payment gateway
+* Focused on the **billing & payment business flow**
+* **Invoice items feature is not included** in the MVP scope
+
+---
 
 # Contributing
 
@@ -142,7 +180,6 @@ This project is licensed under the **MIT License**.
 
 # Author
 
-Indra Ramdani Saputra
-
+**Indra Ramdani Saputra**
 Informatics Student
 Telkom University Purwokerto
