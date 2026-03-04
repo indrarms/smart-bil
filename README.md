@@ -181,5 +181,7 @@ This project is licensed under the **MIT License**.
 # Author
 
 **Indra Ramdani Saputra**
-Informatics Student
+
+Informatics Student 
+
 Telkom University Purwokerto
